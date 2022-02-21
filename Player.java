@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 class Player{
   //instance vars
   protected int claimVal;
@@ -5,6 +7,8 @@ class Player{
   protected int y; // the "head"
   protected String name;
   
+  protected Scanner sc;
+
   final int initialX, initialY;
 
 
@@ -33,9 +37,10 @@ class Player{
     return this.y;
   }
 
-  /**
-  
-  */
+  public void setScanner(Scanner s){
+    this.sc = s;
+  }
+
   public Board move(int chosenX, int chosenY, Board b){
     if(b.isValidMove(chosenX, chosenY, this.x, this.y)){
       b.move(chosenX, chosenY, this.claimVal);

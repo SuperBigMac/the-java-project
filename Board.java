@@ -89,4 +89,59 @@ public class Board {
     }
     return s;
   }
+
+  /*
+    color1 and color2 are ANSI escape sequences for colors
+  */
+  public String toStringWithColor(int x1, int y1, int x2, int y2, String color1, String color2){
+    String s = "";
+    for(int i=0; i<this.size; i++){
+      for(int k=0; k<this.size; k++){
+        if(this.board[k][i]==1){
+          if((k == x1 && i == y1) || (k == x2 && i == y2)){
+            s = s + color1 + "A" + "\u001B[0m ";
+          } else {
+            s = s + "A" + " ";
+          }
+        } else if(this.board[k][i]==-1){
+          if((k == x1 && i == y1) || (k == x2 && i == y2)){
+            s = s + color2 + "B" + "\u001B[0m ";
+          } else {
+            s = s + "B" + " ";
+          }
+        } else {
+          s = s + "_" + " ";
+        }
+        
+      }
+      s = s + "\n";
+    }
+    return s;
+  }
+
+  public String finalBoard(int x1, int y1, int x2, int y2, String color1, String color2){
+    String s = "";
+    for(int i=0; i<this.size; i++){
+      for(int k=0; k<this.size; k++){
+        if(this.board[k][i]==1){
+          if((k == x1 && i == y1) || (k == x2 && i == y2)){
+            s = s + color1 + "\u001B[43m" + "A" + "\u001B[0m ";
+          } else {
+            s = s + color1 + "A" + "\u001B[0m ";
+          }
+        } else if(this.board[k][i]==-1){
+          if((k == x1 && i == y1) || (k == x2 && i == y2)){
+            s = s + color2 + "\u001B[43m" + "B" + "\u001B[0m ";
+          } else {
+            s = s + color2 + "B" + "\u001B[0m ";
+          }
+        } else {
+          s = s + "_" + " ";
+        }
+        
+      }
+      s = s + "\n";
+    }
+    return s;
+  }
 }
