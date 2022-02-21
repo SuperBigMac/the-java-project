@@ -1,0 +1,31 @@
+
+  _   _    U  ___ u_____ U _____ u____    _    
+ | \ |"|    \/"_ \|_ " _|\| ___"|/ __"| U|"|u  
+<|  \| |>   | | | | | |   |  _|"<\___ \/\| |/  
+U| |\  |.-,_| |_| |/| |\  | |___ u___) | |_|   
+ |_| \_| \_)-\___/u |_|U  |_____||____/>>(_)   
+ ||   \\,-.   \\  _// \\_ <<   >> )(  (__|||_  
+ (_")  (_/   (__)(__) (__(__) (__(__)   (__)_) 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+Notes! (for when working on this project asynchronously)
+
+  - 1/28/2022: Made the user input more robust— exceptions shouldn't be thrown when user inputs something unexpected
+    - Also added some explanations in the form of comments (or as repl calls them, "threads"). Hopefully, they're somewhat useful.
+  - 1/29/2022: Each player's position on the board is now represented by an A and B to prevent formatting from getting too weird (-1 took up 2 character spaces, and having multiple -1's in a single row makes the rows look kinda sus).
+      - Note: the A and B's are hard-coded in: changing the name of the Player while instantinating will not affect the display of the board, only the prompts. 
+      - The numerical representation of the game board (how the game board is saved) is still in terms of -1, 0, and -1. It just gets converted into B, _, and A when toString() is called.
+  - 2/21/2022: Changed quite a bit regarding how algorithms are made. Every algorithm now is a subclass of PlayerAlg, which is an abstract subclass of Player.java.
+      - What does this mean? We only have to do <algorithmn>.move(opponentX, opponentY, board) to make a move. It returns an updated board with its move
+      - Also, we we only have to change the constructors (in lines 10 & 11 of Main.java) to change who is going against whom
+      - Code in Main.java also became a bit more elegant (only 2 lines of code needed to run the game :O)
+      - Keegan (p1) vs. Leahcim (p2) is a very even matchup
+
+---------------------------------------------------
+Stuff that might come up:
+  - I've been making a thinko (conceptual/mental typo in essence), thinking that by switching the k and i iterators in the Board.toString() method, we would have to keep that in mind while taking output from Board.getValues(). However, it appears that the adjustment we made in the toString() method wasn't merely a visual band-aid (like I initially thought) but rather just fixing the code. --Ethan (1/29/22)
+    - In other words, i thought to access the value of the point (1,2) we would have to do b.getValue()[2][1] (which is unintuitive), but in reality we b.getValue()[1][2] would be correct.
+  - javadocs in replit isn't a good idea --Ethan (1/29/22)
+  - if we want to re-run quickly, we can do "java Main" in the console instead of pressing the Run button twice in succession.
