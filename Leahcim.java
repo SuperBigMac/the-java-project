@@ -40,7 +40,11 @@ public class Leahcim extends PlayerAlg{
         maxY.add(validY.get(i));
       }
     }
-
+    
+    if(maxX.size()==0){
+      return new int[]{-1,-1};
+    }
+    
     int randomVal = (int) ThreadLocalRandom.current().nextInt(0, maxX.size());
 
     return new int[]{maxX.get(randomVal), maxY.get(randomVal)};

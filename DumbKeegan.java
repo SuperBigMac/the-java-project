@@ -40,6 +40,9 @@ public class DumbKeegan extends PlayerAlg{
       }
     }
 
+    if(minX.length==0){
+      return new int[]{-1,-1};
+    }
     int randomVal = (int) ThreadLocalRandom.current().nextDouble(0, countMin);
 
     return new int[]{minX[randomVal] + playerX, minY[randomVal] + playerY};

@@ -72,6 +72,24 @@ public class Board {
     this.board[x][y] = 9; //random nonzero int
   }
 
+
+  public int count(int val){
+    int num = 0;
+    for(int x=0; x<board.length; x++){
+      for(int y=0; y<board[x].length;y++){
+        if(board[x][y]==val){
+          num++;
+        }
+      }
+    }
+
+    return num;
+  }
+  
+  public boolean isTied(){
+    return (this.count(-1) == this.count(1));
+  }
+
   public String toString(){
     String s = "";
     for(int i=0; i<this.size; i++){
@@ -143,5 +161,26 @@ public class Board {
       s = s + "\n";
     }
     return s;
+  }
+
+  public Player getWinner(Player p1, Player p2){
+    if(p1.movesExist(this)){
+      return p1;
+    } else if(p2.movesExist(this)){
+      return p2;
+    } else if(this.isTied()){
+      return new Player("TIE");
+    } else if(this.count(p1.getClaimVal())>this.count(p2.getClaimVal())){
+      return p1;
+    } else if(this.count(p1.getClaimVal())<this.count(p2.getClaimVal())){
+      return p2;
+    } else {
+      System.out.println("How did we get here? D: \n");
+      System.out.println(this.finalBoard(p1.getX(), p1.getY(), p2.getX(), p2.getY(), "\u001B[31m", "\u001B[32m"));
+      System.out.println("A: "+this.count(p1.getClaimVal()));
+      System.out.println("B: "+this.count(p2.getClaimVal()));
+      System.exit(0);
+      return new Player("");
+    }
   }
 }

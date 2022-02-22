@@ -24,6 +24,14 @@ class Player{
     this.initialY = initY;
   }
   
+  public Player(String name){
+    this.claimVal = 0;
+    this.x = 0;
+    this.y = 0;
+    this.name = name;
+    this.initialX = 0;
+    this.initialY = 0;
+  }  
   //methods
   public String getName(){
     return this.name;
@@ -35,6 +43,10 @@ class Player{
 
   public int getY(){
     return this.y;
+  }
+
+  public int getClaimVal(){
+    return this.claimVal;
   }
 
   public void setScanner(Scanner s){
@@ -65,5 +77,8 @@ class Player{
     this.x = this.initialX;
     this.y = this.initialY;
   }
-
+  
+  public String toString(){
+    return this.name;
+  }
 }

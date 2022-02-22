@@ -19,6 +19,11 @@ public class Bob extends PlayerAlg{
         validY.add(playerY+checkY[i]);
       }
     }
+
+    if(validX.size()==0){
+      return new int[]{-1,-1};
+    }
+
     int randomVal = (int) ThreadLocalRandom.current().nextDouble(0, validX.size());
 
     return new int[]{validX.get(randomVal), validY.get(randomVal)};

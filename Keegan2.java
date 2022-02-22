@@ -38,6 +38,10 @@ public class Keegan2 extends PlayerAlg{
         count++;
       }
     }
+    
+    if(maxX.length==0){
+      return new int[]{-1,-1};
+    }
 
     int randomVal = (int) ThreadLocalRandom.current().nextDouble(0, countMax);
 
