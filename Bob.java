@@ -5,7 +5,7 @@ public class Bob extends PlayerAlg{
   public Bob(int initX, int initY, int claimVal){
     super(initX, initY, claimVal, "Bob");
   }
-
+  
   public int[] getNextMove(int playerX, int playerY, int opponentX, int opponentY, Board b){
     int[] checkX = new int[]{-1,-1,-1,0,0,1,1,1};
     int[] checkY = new int[]{-1,0,1,-1,1,-1,0,1};

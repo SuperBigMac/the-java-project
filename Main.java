@@ -7,9 +7,18 @@ class Main {
     
     int boardsize = 7;
     Board b = new Board(boardsize);
+
+    /* test suite
+
+    Player[] p1Array = new Player[]{new Bob(0, 0, 1), new Keegan(0, 0, 1), new DumbKeegan(0, 0, 1), new Michael(0, 0, 1), new Leahcim(0, 0, 1)};
+    Player[] p2Array = new Player[]{new Bob(boardsize-1, boardsize-1, -1), new Keegan(boardsize-1, boardsize-1, -1), new DumbKeegan(boardsize-1, boardsize-1, -1), new Michael(boardsize-1, boardsize-1, -1), new Leahcim(boardsize-1, boardsize-1, -1)};
     
-    Player player_1 = new Michael(0, 0, 1);
-    Player player_2 = new Bob(boardsize-1,boardsize-1, -1);
+    for(int m=0; m<p1Array.length; m++){ for(int n=0; n<p2Array.length; n++){
+    Player player_1 = p1Array[m];
+    Player player_2 = p2Array[n];*/
+
+    Player player_1 = new Bob(0, 0, 1);
+    Player player_2 = new Leahcim(boardsize-1, boardsize-1, -1)
 
     player_1.setScanner(sc);
     player_2.setScanner(sc);
@@ -17,7 +26,7 @@ class Main {
     //final Player[] moveOrder = new Player[]{player_1, player_2, player_2, player_1};
 
     //repeat the game 100000 times for testing
-    int numGames = 1;
+    int numGames = 100000;
 
     int wins_1 = 0;
     int wins_2 = 0;
@@ -65,9 +74,11 @@ class Main {
     System.out.printf("\n\nBoard size: %s x %s\n# of games: %d\nPlayer 1 (%s) wins: %s (%.1f%%)\nPlayer 2 (%s) wins: %s (%.1f%%)\nTies: %s (%.1f%%)\n\n", boardsize, boardsize, numGames, player_1.getName(), wins_1, (double)wins_1*100/(double)numGames, player_2.getName(), wins_2, (double)wins_2*100/(double)numGames, ties, (double)ties*100/(double)numGames);
 
     System.out.println("Final board:\n" + b.finalBoard(player_1.getX(), player_1.getY(), player_2.getX(), player_2.getY(), "\u001B[31m", "\u001B[32m"));
-    System.out.println("A: " + b.count(player_1.getClaimVal()));
+    
+    //}} //uncomment this if running test suite
+    /*System.out.println("A: " + b.count(player_1.getClaimVal()));
     System.out.println("B: " + b.count(player_2.getClaimVal()));
-    System.out.println(b.getWinner(player_1, player_2));
+    System.out.println("Result: " + b.getWinner(player_1, player_2));*/
     sc.close();
   }
 }
