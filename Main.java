@@ -29,7 +29,7 @@ class Main {
     for(int A = 0; A < numGames; A++){
 
       //play the game
-      for(int i=0;moveOrder[i%4].movesExist(b) && moveOrder[(i+1)%4].movesExist(b);i++){
+      for(int i=0;moveOrder[i%4].movesExist(b) && moveOrder[(i+2)%4].movesExist(b);i++){
         b = moveOrder[i%4].move(moveOrder[(i+2)%4].getX(), moveOrder[(i+2)%4].getY(), b);
         //System.out.print(b); //display board after every move
       }
