@@ -11,16 +11,13 @@ public class Leahcim extends PlayerAlg{
 
   //Definitely didn't copy this over from Michael.java and only change 1 operator ;)
   protected int[] getNextMove(int playerX, int playerY, int opponentX, int opponentY, Board b){
-    int[] checkX = new int[]{-1,-1,-1,0,0,1,1,1};
-    int[] checkY = new int[]{-1,0,1,-1,1,-1,0,1};
-
     ArrayList<Integer> validX = new ArrayList<Integer>();
     ArrayList<Integer> validY = new ArrayList<Integer>();
 
     for(int i=0; i<8; i++){
-      if(b.isValidMove(playerX+checkX[i], playerY+checkY[i], playerX, playerY)){
-        validX.add(playerX+checkX[i]);
-        validY.add(playerY+checkY[i]);
+      if(b.isValidMove(playerX+CHECK_X[i], playerY+CHECK_Y[i], playerX, playerY)){
+        validX.add(playerX+CHECK_X[i]);
+        validY.add(playerY+CHECK_Y[i]);
       }
     }
 

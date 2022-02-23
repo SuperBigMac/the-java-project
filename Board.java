@@ -2,7 +2,7 @@
 public class Board {
   //instance variables
   private int size;
-  private int[][] board;
+  public int[][] board;
   
 
   //constructors
@@ -21,6 +21,29 @@ public class Board {
   public Board(int[][] values){
     this.size = values.length;
     this.board = values;
+  }
+
+  //Sets up board w/ tiles in place
+  public Board(int size, String setup) throws IllegalArgumentException{
+    if(setup.length() != (size*size)){
+      throw new IllegalArgumentException("Setup string length: " + setup.length() + ". Expected: " + (size*size));
+    }
+    
+    this.board = new int[size][size];
+    this.size = size;
+
+    for(int x=0; x<size; x++){
+      for(int y=0; y<size; y++){
+        char value = setup.charAt((x*size) + y);
+        if(value == 'A'){
+          this.board[y][x] = 1;
+        } else if(value == 'B'){
+          this.board[y][x] = -1;
+        } else {
+          this.board[y][x] = 0;
+        }
+      }
+    }
   }
 
   //methods

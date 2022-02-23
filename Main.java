@@ -18,7 +18,7 @@ class Main {
     Player player_2 = p2Array[n];*/
 
     Player player_1 = new Bob(0, 0, 1);
-    Player player_2 = new Leahcim(boardsize-1, boardsize-1, -1)
+    Player player_2 = new Leahcim(boardsize-1, boardsize-1, -1);
 
     player_1.setScanner(sc);
     player_2.setScanner(sc);
@@ -41,11 +41,11 @@ class Main {
       //play the game (less elegant than the old one, but is better for tie checking)
       for(int i=0;player_1.movesExist(b)&&player_2.movesExist(b);i++){
         if(i%2==0){
-          player_1.move(player_2.getX(), player_2.getY(), b);
-          player_2.move(player_1.getX(), player_1.getY(), b);
+          player_1.move(player_2, b);
+          player_2.move(player_1, b);
         } else{
-          player_2.move(player_1.getX(), player_1.getY(), b);
-          player_1.move(player_2.getX(), player_2.getY(), b);
+          player_2.move(player_1, b);
+          player_1.move(player_2, b);
         }
       }
 

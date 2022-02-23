@@ -62,6 +62,10 @@ class Player{
     return b;
   }
 
+  public Board move(Player opponent, Board b){
+    return this.move(opponent.getX(), opponent.getY(), b);
+  }
+
   public boolean movesExist(Board b){
     for (int i=-1; i<2; i++){
       for (int k=-1; k<2; k++){
