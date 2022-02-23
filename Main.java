@@ -17,8 +17,8 @@ class Main {
     Player player_1 = p1Array[m];
     Player player_2 = p2Array[n];
 
-    Player player_1 = new Bob(0, 0, 1);
-    Player player_2 = new Leahcim(boardsize-1, boardsize-1, -1);
+    //Player player_1 = new Bob(0, 0, 1);
+    //Player player_2 = new Leahcim(boardsize-1, boardsize-1, -1);
 
     player_1.setScanner(sc);
     player_2.setScanner(sc);
