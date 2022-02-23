@@ -25,6 +25,9 @@ public class Keegan3 extends PlayerAlg{
     if(steps<Keegan3.moveDist(xP, yP, xF, yF)){
       return -1;
     }
+    if(!b.tileExists(xP,yP)){
+      return -1;
+    }
     if(b.isTaken(xP, yP)){
       return -1;
     }
@@ -38,7 +41,7 @@ public class Keegan3 extends PlayerAlg{
     else {
       int checkX, checkY;
       int result = -1;
-      int highestResidual = -1; //any negative integer
+      int highestResidual = -1;
 
       for(int i=0; i<CHECK_X.length;i++){
         for(int k=0; k<CHECK_Y.length;k++){
@@ -61,6 +64,13 @@ public class Keegan3 extends PlayerAlg{
     }
   }
 
+  public static int path2(int xP, int yP, int xF, int yF, int steps, Board b){
+    int half = steps/2;
+    int half2 = steps-half;
+    return -1;
+    
+  }
+  
   public static int pathOptimized(int xP, int yP, int xF, int yF, int steps, Board b){
     int result = -1;
     int i = 0;
@@ -128,5 +138,10 @@ public class Keegan3 extends PlayerAlg{
     int deltaX = Math.abs(x1-x2);
     int deltaY = Math.abs(y1-y2);
     return (Math.min(deltaX, deltaY) + Math.abs(deltaX-deltaY));
+  }
+
+  //closest tile to (x1,y1) within radius of (x2,y2)
+  public static int closestTileWithRadius(int x1, int y1, int x2, int y2, int radius){
+    return -1;
   }
 }

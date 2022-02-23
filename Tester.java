@@ -16,8 +16,8 @@ public class Tester{
     
     
 
-    int x1 = 2;
-    int y1 = 2;
+    int x1 = 1;
+    int y1 = 6;
     int x2 = 4;
     int y2 = 5;
 

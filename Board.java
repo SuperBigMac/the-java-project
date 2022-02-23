@@ -64,6 +64,10 @@ public class Board {
     return board[x][y]!=0;
   }
 
+  public boolean tileExists(int x, int y){
+    return (x>=0 && x<size && y>=0 && y<size);
+  }
+  
   public boolean isValidMove(int checkX, int checkY, int headX, int headY){
     
     //preventing array OOB exceptions
