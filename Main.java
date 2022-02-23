@@ -8,14 +8,14 @@ class Main {
     int boardsize = 7;
     Board b = new Board(boardsize);
 
-    /* test suite
+    /* test suite */
 
     Player[] p1Array = new Player[]{new Bob(0, 0, 1), new Keegan(0, 0, 1), new DumbKeegan(0, 0, 1), new Michael(0, 0, 1), new Leahcim(0, 0, 1)};
     Player[] p2Array = new Player[]{new Bob(boardsize-1, boardsize-1, -1), new Keegan(boardsize-1, boardsize-1, -1), new DumbKeegan(boardsize-1, boardsize-1, -1), new Michael(boardsize-1, boardsize-1, -1), new Leahcim(boardsize-1, boardsize-1, -1)};
     
     for(int m=0; m<p1Array.length; m++){ for(int n=0; n<p2Array.length; n++){
     Player player_1 = p1Array[m];
-    Player player_2 = p2Array[n];*/
+    Player player_2 = p2Array[n];
 
     Player player_1 = new Bob(0, 0, 1);
     Player player_2 = new Leahcim(boardsize-1, boardsize-1, -1);
@@ -75,7 +75,7 @@ class Main {
 
     System.out.println("Final board:\n" + b.finalBoard(player_1.getX(), player_1.getY(), player_2.getX(), player_2.getY(), "\u001B[31m", "\u001B[32m"));
     
-    //}} //uncomment this if running test suite
+    }} //uncomment this if running test suite
     /*System.out.println("A: " + b.count(player_1.getClaimVal()));
     System.out.println("B: " + b.count(player_2.getClaimVal()));
     System.out.println("Result: " + b.getWinner(player_1, player_2));*/
